@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Node (only present if you run the Tailwind CLI locally)
+node_modules/
+package-lock.json
+
+# Editors
+.vscode/
+.idea/
