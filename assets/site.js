@@ -173,7 +173,7 @@
     var body = rows.map(function (r) {
       return r.label + ": " + (r.value || "—");
     }).join("\n");
-    body += "\n\nSent from awagro.com.gh";
+    body += "\n\nSent from the A.W. Agro Processing website";
     // mailto: links get truncated by some clients past ~2000 characters.
     if (body.length > 1600) body = body.slice(0, 1600) + "\n…(truncated)";
     return "mailto:" + encodeURIComponent(to) +
