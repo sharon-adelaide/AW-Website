@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Icons load from Google Fonts. Until that font is ready — or if it never
+     arrives on a slow connection — keep the ligature names invisible rather
+     than printing "arrow_forward" across the page. Space is still reserved,
+     so nothing shifts when the icons appear. */
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    visibility: hidden;
+  }
+  html.icons-ready .material-symbols-outlined { visibility: visible; }
+  /* Before the font resolves, reserve a square instead of the width of the
+     ligature word — otherwise narrow phones scroll sideways. */
+  html:not(.icons-ready) .material-symbols-outlined:not([data-probe]) {
+    width: 1em; min-width: 0; max-width: 1em; flex: none; overflow: hidden;
+  }
+  html:not(.icons-ready) #menu-toggle::before { content: "\2630"; font-size: 20px; line-height: 1; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+  body { overscroll-behavior: none; }
+  [hidden] { display: none !important; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+
+  /* One visible focus ring everywhere, for keyboard users only. The <main>
+     landmark and confirmation panels take focus programmatically, so they
+     are excluded — a ring around a whole page section is just noise. */
+  :focus-visible {
+    outline: 2.5px solid theme("colors.lake");
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  #main:focus, [role="status"]:focus, [role="alert"]:focus { outline: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
