@@ -32,7 +32,7 @@ won't have any CSS behind it.
 
 1. **Point the forms at a form service.** Both enquiry forms currently open the
    sender's own mail app with the answers pre-filled, addressed to
-   `trade@awagro.com.gh` — it works on any static host with nothing to set up, but a
+   `wiafeadelaide@gmail.com` — it works on any static host with nothing to set up, but a
    visitor with no mail app configured (common on phones using webmail) hits a dead
    end. Sign up for Formspree, Web3Forms or FormSubmit, then paste the endpoint they
    give you into `FORM_ENDPOINT` at the top of the forms section in `assets/site.js`.
@@ -40,9 +40,13 @@ won't have any CSS behind it.
    button and the "email us directly" fallback are already wired.
    Recipients live on the `data-email` attribute of each `<form>`, so the two forms
    can go to different desks.
-2. **Replace the placeholder contact details** — `+233 (0)24 000 0000`,
-   `+233 (0)50 000 0000`, `hello@`, `trade@` and `info@awagro.com.gh` are all dummies.
-   They appear in the footer of every page and on `contact.html`.
+2. **Swap in a branded email when the domain exists.** Contact details are now
+   real: `+44 7765 643764` and `wiafeadelaide@gmail.com`, on every page and on both
+   forms. The invented second line (`+233 (0)50 000 0000`) and the `hello@` /
+   `trade@` / `info@awagro.com.gh` split were removed rather than left pointing at
+   addresses nobody reads. A Gmail address on a B2B commodity site reads as less
+   established than `trade@awagro.com.gh` would, so this is worth revisiting once
+   the domain is registered — search for the address to replace it in one pass.
 3. **Fill in the registration numbers** on `about.html` (Registrar of Companies,
    GSA certificate, EPA permit) — they currently read "add before launch".
 4. **Confirm the plant coordinates.** `contact.html` uses 6.941° N, 0.285° E and the
