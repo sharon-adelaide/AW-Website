@@ -2,7 +2,7 @@
  *  Rebuild the stylesheet after changing markup or design tokens:
  *    npx tailwindcss@3 -c tailwind.config.js -i src/input.css -o assets/site.css --minify
  */
-module.exports = Object.assign({ content: ["./*.html"] },
+module.exports = Object.assign({ content: ["./*.html", "./assets/*.js"] },
 {
   darkMode: "class",
   theme: {

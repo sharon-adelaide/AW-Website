@@ -204,18 +204,16 @@ Request a Sample
 
 <!-- SECTION 3: THE SACK -->
 <section class="w-full px-gutter-mobile lg:px-gutter-desktop pb-space-4xl" id="packaging">
-<div class="max-w-container-max mx-auto flex flex-col gap-space-2xl">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
-<div class="flex flex-col gap-space-xs">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-space-xl text-center">
+
+<div class="flex flex-col items-center gap-space-xs">
 <span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Packaging</span>
 <h2 class="font-headline-lg text-headline-lg text-primary font-bold">What the sack looks like</h2>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">One design across the whole range. The colour tells you which product is in the bag before you get close enough to read it.</p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Pick a product to see its sack.</p>
 </div>
 
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-<div class="lg:col-span-5 bg-surface-container-low rounded p-space-xl flex items-center justify-center">
-<svg class="w-full max-w-[280px] h-auto drop-shadow-[0_14px_24px_rgba(27,46,34,0.22)]" viewBox="0 0 300 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A 25kg cream sack of gari. A gold cassava-leaf medallion sits at the top, above a space reserved for the brand mark, the word GARI, a gold FINE GRADE panel, the product name in six languages, and the net weight.">
+<div class="w-full max-w-lg bg-surface-container-low rounded p-space-xl flex items-center justify-center">
+<svg class="w-full max-w-[300px] h-auto drop-shadow-[0_14px_24px_rgba(27,46,34,0.22)]" id="sack-svg" style="--ink2:#d9a441" viewBox="0 0 300 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A 25kg cream sack with a cassava-leaf medallion, the product name, a grade panel and the net weight." aria-live="polite">
 <defs><clipPath id="sackB"><path d="M18 46 h264 v340 h-264 Z"/></clipPath></defs>
 <path d="M14 18 q136 -12 272 0 l-6 30 q-130 -10 -260 0 Z" fill="#EFE9DA" stroke="#CFC6B0" stroke-width="1"/>
 <path d="M20 26 q130 -10 260 0" fill="none" stroke="#BFB49A" stroke-width="1.4" stroke-dasharray="4 4"/>
@@ -224,9 +222,9 @@ Request a Sample
 <rect x="18" y="46" width="264" height="340" fill="none" stroke="#DCD5C4" stroke-width="1"/>
 <g clip-path="url(#sackB)">
 <rect x="32" y="60" width="236" height="314" fill="none" stroke="#1b2e22" stroke-width="2.5"/>
-<circle cx="150" cy="132" r="52" fill="none" stroke="#d9a441" stroke-width="3"/>
-<circle cx="150" cy="132" r="45" fill="none" stroke="#d9a441" stroke-width="1.4"/>
-<g fill="#d9a441">
+<circle cx="150" cy="132" r="52" fill="none" stroke="var(--ink2)" stroke-width="3"/>
+<circle cx="150" cy="132" r="45" fill="none" stroke="var(--ink2)" stroke-width="1.4"/>
+<g fill="var(--ink2)">
 <ellipse cx="150" cy="108" rx="7" ry="23"/>
 <ellipse cx="150" cy="108" rx="7" ry="23" transform="rotate(40 150 132)"/>
 <ellipse cx="150" cy="108" rx="7" ry="23" transform="rotate(-40 150 132)"/>
@@ -237,48 +235,39 @@ Request a Sample
 <rect x="66" y="198" width="168" height="36" rx="2" fill="none" stroke="#1b2e22" stroke-width="2" stroke-dasharray="5 4"/>
 <text x="150" y="217" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="8" fill="#1b2e22" letter-spacing="2">[ BRAND MARK ]</text>
 <text x="150" y="228" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="6" fill="#1b2e22" opacity=".7" letter-spacing="1">TO BE PLACED</text>
-<rect x="92" y="244" width="116" height="1.6" fill="#d9a441"/>
-<text x="150" y="270" text-anchor="middle" font-family="Work Sans, sans-serif" font-weight="700" font-size="24" fill="#1b2e22" letter-spacing="9">GARI</text>
-<rect x="104" y="278" width="92" height="14" fill="#d9a441"/>
-<text x="150" y="288" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="7.5" fill="#1b2e22" letter-spacing="2.5">FINE GRADE</text>
-<g font-family="Work Sans, sans-serif" font-size="7" fill="#1b2e22" text-anchor="middle">
+<rect x="92" y="244" width="116" height="1.6" fill="var(--ink2)"/>
+<text x="150" y="270" text-anchor="middle" font-family="Work Sans, sans-serif" font-weight="700" font-size="24" fill="#1b2e22" letter-spacing="9" id="sack-product">GARI</text>
+<rect x="104" y="278" width="92" height="14" fill="var(--ink2)" id="sack-panel"/>
+<text x="150" y="288" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="7.5" fill="#1b2e22" letter-spacing="2.5" id="sack-grade">FINE GRADE</text>
+<g font-family="Work Sans, sans-serif" font-size="7" fill="#1b2e22" text-anchor="middle" id="sack-langs">
 <text x="150" y="308">Harina de Mandioca · Semoule de Manioc</text>
 <text x="150" y="319">Cassava Mehl · Cassavemeel</text>
 <text x="150" y="330">Farina di Manioca · Farinha de Mandioca</text>
 </g>
+<text x="150" y="319" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="8" fill="#1b2e22" letter-spacing="1" id="sack-feed" style="display:none">ANIMAL FEED · NOT FOR HUMAN CONSUMPTION</text>
 <text x="150" y="354" text-anchor="middle" font-family="Work Sans, sans-serif" font-weight="700" font-size="20" fill="#1b2e22">25 kg</text>
-<text x="150" y="368" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="6.8" fill="#1b2e22">INGREDIENTS: CASSAVA · PRODUCT OF GHANA</text>
+<text x="150" y="368" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="6.8" fill="#1b2e22" id="sack-foot">INGREDIENTS: CASSAVA · PRODUCT OF GHANA</text>
 </g>
 <path d="M18 386 q132 14 264 0 l-8 26 q-124 12 -248 0 Z" fill="#EFE9DA" stroke="#CFC6B0" stroke-width="1"/>
 <path d="M24 396 q126 12 252 0" fill="none" stroke="#BFB49A" stroke-width="1.4" stroke-dasharray="4 4"/>
 </svg>
 </div>
 
-<div class="lg:col-span-7 flex flex-col gap-space-lg">
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">A 25kg woven sack printed in two colours on one side. The dark green never changes. The second colour tells you what is inside, so a storeman can pick the right pallet from across the yard.</p>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
-<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-xs">
-<span class="w-8 h-8 rounded bg-gari"></span>
-<span class="font-headline-sm text-headline-sm text-primary font-bold">Gold</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Fine gari</span>
+<div class="flex flex-wrap items-stretch justify-center gap-space-md" id="sack-picker">
+<button aria-pressed="true" class="bg-surface-container-lowest px-space-lg py-space-md rounded shadow-sm flex items-center gap-space-sm transition-all hover:shadow-md" data-feed="false" data-foot="INGREDIENTS: CASSAVA · PRODUCT OF GHANA" data-grade="FINE GRADE" data-gradefg="#1b2e22" data-ink="#d9a441" data-product="GARI" data-spacing="9" type="button">
+<span class="w-7 h-7 rounded shrink-0" style="background:#d9a441"></span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">Fine gari</span>
+</button>
+<button aria-pressed="false" class="bg-surface-container-lowest px-space-lg py-space-md rounded shadow-sm flex items-center gap-space-sm transition-all hover:shadow-md" data-feed="false" data-foot="INGREDIENTS: CASSAVA · PRODUCT OF GHANA" data-grade="COARSE GRADE" data-gradefg="#f8f4e9" data-ink="#8c5a32" data-product="GARI" data-spacing="9" type="button">
+<span class="w-7 h-7 rounded shrink-0" style="background:#8c5a32"></span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">Coarse gari</span>
+</button>
+<button aria-pressed="false" class="bg-surface-container-lowest px-space-lg py-space-md rounded shadow-sm flex items-center gap-space-sm transition-all hover:shadow-md" data-feed="true" data-foot="CASSAVA PEEL MEAL · PRODUCT OF GHANA" data-grade="FEED GRADE" data-gradefg="#f8f4e9" data-ink="#2c6b70" data-product="PEEL MEAL" data-spacing="2" type="button">
+<span class="w-7 h-7 rounded shrink-0" style="background:#2c6b70"></span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">Peel meal</span>
+</button>
 </div>
-<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-xs">
-<span class="w-8 h-8 rounded bg-secondary"></span>
-<span class="font-headline-sm text-headline-sm text-primary font-bold">Brown</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Coarse gari</span>
-</div>
-<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-xs">
-<span class="w-8 h-8 rounded bg-lake"></span>
-<span class="font-headline-sm text-headline-sm text-primary font-bold">Teal</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Cassava peel meal</span>
-</div>
-</div>
-<div class="bg-surface-container-low rounded p-space-lg flex flex-col gap-space-sm">
-<p class="font-body-md text-body-md text-on-surface"><strong>Feed never looks like food.</strong> Peel meal carries a whole panel in a different colour, so it cannot be mistaken for the food-grade sack on a loading bay.</p>
-<p class="font-body-md text-body-md text-on-surface-variant">The product name is printed in six languages for export, and the batch number and packing date are stamped on at packing rather than printed, so one set of plates covers every run.</p>
-</div>
-</div>
-</div>
+
 </div>
 </section>
 

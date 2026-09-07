@@ -26,7 +26,9 @@ npx tailwindcss@3 -c tailwind.config.js -i src/input.css -o assets/site.css --mi
 
 Rebuild whenever you add Tailwind classes to the HTML too — unused classes are
 stripped out of `site.css`, so a class that wasn't in the markup at build time
-won't have any CSS behind it.
+won't have any CSS behind it. `assets/site.js` is scanned as well, because the
+sack picker toggles classes from JavaScript; if you add a class name that only ever
+appears in JS, make sure it is in a file the `content` list covers.
 
 ## Before you go live
 
