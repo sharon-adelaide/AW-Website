@@ -96,13 +96,13 @@ module.exports = Object.assign({ content: ["./*.html"] },
       fontSize: {
         "display-mobile": ["36px", { lineHeight: "44px", letterSpacing: "-0.01em", fontWeight: "700" }],
         "headline-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.015em", fontWeight: "600" }],
-        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "600" }],
+        "label-md": ["13px", { lineHeight: "18px", letterSpacing: "0.05em", fontWeight: "600" }],
         "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
-        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "body-lg": ["19px", { lineHeight: "30px", fontWeight: "400" }],
         "display": ["52px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "700" }],
-        "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "600" }],
-        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "600" }],
+        "body-md": ["17px", { lineHeight: "26px", fontWeight: "400" }],
+        "body-sm": ["15px", { lineHeight: "22px", fontWeight: "400" }],
         "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
         "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }]
       }
