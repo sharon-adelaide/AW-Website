@@ -245,6 +245,59 @@
     });
   });
 
+  /* ---- Sack colour picker (home page) --------------------------------
+     Hovering, focusing or tapping a product recolours the sack's second
+     ink and swaps the wording that goes with it. The SVG defaults to fine
+     gari in the markup, so it still reads correctly with JS switched off. */
+  var picker = document.getElementById("sack-picker");
+  var sack = document.getElementById("sack-svg");
+
+  if (picker && sack) {
+    var parts = {
+      product: document.getElementById("sack-product"),
+      grade: document.getElementById("sack-grade"),
+      langs: document.getElementById("sack-langs"),
+      feed: document.getElementById("sack-feed"),
+      foot: document.getElementById("sack-foot")
+    };
+    var buttons = picker.querySelectorAll("button");
+
+    function showProduct(btn) {
+      var d = btn.dataset;
+      sack.style.setProperty("--ink2", d.ink);
+      if (parts.product) {
+        parts.product.textContent = d.product;
+        parts.product.setAttribute("letter-spacing", d.spacing);
+      }
+      if (parts.grade) {
+        parts.grade.textContent = d.grade;
+        parts.grade.setAttribute("fill", d.gradefg);
+      }
+      if (parts.foot) parts.foot.textContent = d.foot;
+      // Feed sacks carry a warning instead of the export descriptors.
+      var isFeed = d.feed === "true";
+      if (parts.langs) parts.langs.style.display = isFeed ? "none" : "";
+      if (parts.feed) parts.feed.style.display = isFeed ? "" : "none";
+      sack.setAttribute("aria-label",
+        "A 25kg sack of " + btn.textContent.trim().toLowerCase() +
+        ", printed in dark green and " + (d.ink === "#d9a441" ? "gold" : d.ink === "#8c5a32" ? "brown" : "teal") + ".");
+
+      buttons.forEach(function (b) {
+        var on = b === btn;
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        b.classList.toggle("shadow-md", on);
+        b.classList.toggle("ring-2", on);
+        b.classList.toggle("ring-primary", on);
+      });
+    }
+
+    buttons.forEach(function (btn) {
+      ["mouseenter", "focus", "click"].forEach(function (evt) {
+        btn.addEventListener(evt, function () { showProduct(btn); });
+      });
+    });
+  }
+
   /* ---- Footer copyright year ---------------------------------------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
